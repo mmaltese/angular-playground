@@ -1,4 +1,13 @@
 <div class="container" fxLayout="column" fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+      
+    </div>
+  </div>
+  
   <mat-list fxFlex>
     <mat-list-item *ngFor="let dish of dishes">
       <img matListAvatar src={{dish.image}} alt={{dish.name}}  />
