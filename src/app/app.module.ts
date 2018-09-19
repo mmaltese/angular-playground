@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import 'hammerjs';
 
 import { DishService } from './services/dish.service';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -47,7 +48,8 @@ import { ContactComponent } from './contact/contact.component';
     MatListModule,
     MatGridListModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    AppRoutingModule
   ],
   providers: [ DishService ],
   bootstrap: [ AppComponent ]
