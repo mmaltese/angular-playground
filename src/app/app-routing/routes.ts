@@ -7,28 +7,10 @@ import { HomeComponent } from '../home/home.component';
 import { ContactComponent } from '../contact/contact.component';
 
 export const routes: Routes = [
-    {
-        path: 'home',
-        component: HomeComponent
-    },
-    {
-        path: 'menu',
-        component: MenuComponent
-    },
-    {
-        path: 'about',
-        component: AboutComponent
-    },
-    {
-        path: 'contact',
-        component: ContactComponent
-    },
-    {
-        path: 'dishDetail',
-        component: DishdetailComponent
-    },
-    {
-        path: '',
-        redirectTo: '/home', pathMatch: 'full'
-    }
+    { path: 'home', component: HomeComponent },
+    { path: 'menu', component: MenuComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'contactus', component: ContactComponent },
+    { path: 'dishDetail', component: DishdetailComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
