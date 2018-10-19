@@ -40,18 +40,23 @@
     <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
       <p>
         <mat-form-field class="half-width">
-          <input type="text" matInput formControlName="firstname" placeholder="First Name">
+          <input type="text" matInput formControlName="firstname" placeholder="First Name" required>
+          <mat-error *ngIf="feedbackForm.get('firstname').hasError('required') && feedbackForm.get('firstname').touched">First name is required</mat-error>
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input type="text" matInput formControlName="lastname" placeholder="Last Name">
+          <input type="text" matInput formControlName="lastname" placeholder="Last Name" required>
+          <mat-error *ngIf="feedbackForm.get('lastname').hasError('required') && feedbackForm.get('lastname').touched">Last name is required</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field class="half-width">
-          <input type="tel" matInput formControlName="telnum" placeholder="Tel. Number">
+          <input type="tel" matInput formControlName="telnum" placeholder="Tel. Number" required>
+          <mat-error *ngIf="feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched">Tel. Number is required</mat-error>
+
         </mat-form-field>
         <mat-form-field class="half-width">
-          <input type="email" matInput formControlName="email" placeholder="Email">
+          <input type="email" matInput formControlName="email" placeholder="Email" required>
+          <mat-error *ngIf="feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched">Email is required</mat-error>
         </mat-form-field>
       </p>
       <table class="form-size">
@@ -73,7 +78,8 @@
           <textarea matInput formControlName="message" placeholder="Your Feedback" rows="12"></textarea>
         </mat-form-field>
       </p>
-      <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+      <button type="submit" mat-button class="background-primary text-floral-white"
+      [disabled]="feedbackForm.invalid">Submit</button>
     </form>
   </div>
 </div>
