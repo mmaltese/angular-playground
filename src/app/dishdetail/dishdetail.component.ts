@@ -31,12 +31,8 @@ export class DishdetailComponent implements OnInit {
                 this.dish = dish;
                 this.setPrevNext(dish.id);
             });
-/*
-        const id = +this.route.snapshot.params['id'];
-        this.dishservice.getDish(id).subscribe(dish => this.dish = dish);
-*/
     }
-
+    
     setPrevNext(dishId: number) {
         const index = this.dishIds.indexOf(dishId);
         this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
